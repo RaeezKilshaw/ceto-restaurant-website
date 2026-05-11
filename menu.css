@@ -1,0 +1,96 @@
+/* ── Menu Page ──────────────────────────────────────────── */
+.menu-page {
+  max-width: 900px;
+  margin: 100px auto 4rem;
+  padding: 0 2rem;
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Lighthaus', serif;
+  margin-bottom: 2.5rem;
+  color: var(--accent);
+}
+
+/* ── Menu sections ──────────────────────────────────────── */
+.menu-section {
+  margin-bottom: 3rem;
+}
+
+.menu-section h2 {
+  font-family: 'Lighthaus', serif;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* ── Menu items ─────────────────────────────────────────── */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--surface);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: default;
+}
+
+.menu-item:hover {
+  background-color: #24211d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.menu-item h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.menu-item p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+.price {
+  font-weight: bold;
+  margin-left: 1.5rem;
+  white-space: nowrap;
+  font-size: 1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .menu-page {
+    margin-top: 80px;
+    padding: 0 1rem;
+  }
+
+  .menu-item {
+    padding: 0.85rem 1rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+    margin-left: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 2.2rem;
+  }
+
+  .menu-section h2 {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@300;400;700&display=swap');
+
+@font-face {
+  font-family: 'Lighthaus';
+  src: url('fonts/Lighthaus.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ── Variables ──────────────────────────────────────────── */
+:root {
+  --bg:         #161411;
+  --surface:    #1f1c19;
+  --surface2:   #2a2724;
+  --text:       #ffffff;
+  --text-muted: #dddddd;
+  --text-dim:   #aaaaaa;
+  --accent:     #c9a96e;
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Proxima Nova', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#top-anchor {
+  position: relative;
+  top: -80px;
+}
+
+/* ── Navbar ─────────────────────────────────────────────── */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--bg);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo a {
+  font-family: 'Lighthaus', serif;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.nav-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-center {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-center li a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+  padding-bottom: 2px;
+}
+
+.nav-center li a:hover {
+  color: var(--text-muted);
+}
+
+.nav-center li a.active {
+  border-bottom: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.book-btn {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.book-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* ── Hamburger ──────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--text);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+/* ── Mobile nav dropdown ────────────────────────────────── */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--surface);
+  padding: 0.5rem 2rem 1rem;
+  border-top: 1px solid var(--surface2);
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--surface2);
+  transition: color 0.2s;
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+  color: var(--accent);
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+footer {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--surface2);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.footer-icons {
+  margin-top: 1rem;
+}
+
+.footer-icons a {
+  color: var(--text-dim);
+  margin: 0 0.5rem;
+  font-size: 1.4rem;
+  transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+  color: var(--accent);
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  color: var(--text-dim);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.back-to-top:hover {
+  color: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* ── Reveal scroll animations ───────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Mobile: navbar ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+
+  .book-btn {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0.85rem 1.25rem;
+  }
+}

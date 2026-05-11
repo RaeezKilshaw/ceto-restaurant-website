@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Céto — Fine Halal Seafood dining in Cape Town. Experience the ocean's finest at our Camps Bay, Constantia, and Franschhoek locations." />
+  <title>Céto | Home</title>
+  <link rel="icon" href="fish-outline.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="home.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+<div id="top-anchor"></div>
+
+<!-- Navbar -->
+<header>
+  <div class="navbar">
+    <div class="logo"><a href="home.html">Céto</a></div>
+    <nav class="nav-menu">
+      <ul class="nav-center">
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <a href="bookings.html" class="book-btn">Book a Table</a>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="bookings.html">Book a Table</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <img src="images/hero-banner.jpg" alt="Céto seafood restaurant" class="hero-img" />
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1>Céto</h1>
+    <p class="slogan">Where the ocean meets elegance — Fine Halal Seafood in the heart of South Africa.</p>
+  </div>
+  <div id="scroll-indicator" class="scroll-indicator" aria-hidden="true">
+    <span class="chevron"></span>
+  </div>
+</section>
+
+<!-- Locations Section -->
+<section class="locations">
+  <h2>Our Locations</h2>
+  <div class="locations-container">
+
+    <div class="location-card reveal">
+      <img src="images/campsbay.jpg" alt="Camps Bay" />
+      <h3>Camps Bay</h3>
+      <p>"Absolutely unforgettable dining experience. The seafood is divine!"</p>
+      <p>★★★★★ 5/5</p>
+      <a href="contact.html" class="contact-link">Contact Us</a>
+    </div>
+
+    <div class="location-card reveal" style="transition-delay: 0.15s">
+      <img src="images/contsantia.jpg" alt="Constantia" />
+      <h3>Constantia</h3>
+      <p>"Impeccable service and the best sushi I've had in years."</p>
+      <p>★★★★★ 5/5</p>
+      <a href="contact.html" class="contact-link">Contact Us</a>
+    </div>
+
+    <div class="location-card reveal" style="transition-delay: 0.3s">
+      <img src="images/frans.jpg" alt="Franschhoek" />
+      <h3>Franschhoek</h3>
+      <p>"Elegant ambiance and fully halal menu. A true gem."</p>
+      <p>★★★★★ 5/5</p>
+      <a href="contact.html" class="contact-link">Contact Us</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="gallery-grid">
+    <img src="images/hh8.webp" alt="Dish 1" class="reveal" />
+    <img src="images/hh6.webp" alt="Dish 2" class="reveal" />
+    <img src="images/hh4.webp" alt="Dish 3" class="reveal" />
+    <img src="images/hh3.webp" alt="Dish 4" class="reveal" />
+    <img src="images/hh2.webp" alt="Dish 5" class="reveal" />
+    <img src="images/hh1.webp" alt="Dish 6" class="reveal" />
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+  <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+  <img id="lightbox-img" src="" alt="" />
+  <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Céto. All rights reserved.</p>
+  <div class="footer-icons">
+    <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+    <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+    <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+    <a href="#" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+  </div>
+  <a href="#top-anchor" class="back-to-top" aria-label="Back to top">
+    <ion-icon name="arrow-up-circle-outline"></ion-icon>
+  </a>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

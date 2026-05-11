@@ -1,0 +1,122 @@
+/* ── About Page ─────────────────────────────────────────── */
+.about-page {
+  max-width: 1200px;
+  margin: 100px auto 4rem;
+  padding: 0 2rem;
+}
+
+.main-heading {
+  font-family: 'Lighthaus', serif;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: var(--accent);
+}
+
+/* ── Bio sections ───────────────────────────────────────── */
+.bio-section {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 4.5rem;
+}
+
+.bio-section.alt {
+  flex-direction: row-reverse;
+}
+
+.chef-image {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chef-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+}
+
+.chef-image figcaption {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-dim);
+  margin-top: 0.6rem;
+}
+
+.bio-text {
+  flex: 1;
+  font-size: 1.03rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.bio-text p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* ── Team Banner ────────────────────────────────────────── */
+.team-banner {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.team-banner h2 {
+  font-family: 'Lighthaus', serif;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+}
+
+.team-banner img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+.team-message {
+  margin-top: 1.5rem;
+  font-size: 1.03rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-page {
+    margin-top: 80px;
+  }
+
+  .bio-section,
+  .bio-section.alt {
+    flex-direction: column;
+  }
+
+  .chef-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .chef-image img {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 2.2rem;
+  }
+
+  .chef-image img {
+    height: 240px;
+  }
+}

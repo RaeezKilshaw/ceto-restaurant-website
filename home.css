@@ -1,0 +1,285 @@
+/* ── Hero ────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(22,20,17,0.25), rgba(22,20,17,0.72));
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.hero-text h1 {
+  font-family: 'Lighthaus', serif;
+  font-size: 5.5rem;
+  margin: 0 0 1rem;
+  color: var(--text);
+  text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+  letter-spacing: 0.08em;
+}
+
+.slogan {
+  font-family: 'Lighthaus', serif;
+  font-size: 1.35rem;
+  color: var(--text-muted);
+  margin: 0;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* ── Scroll indicator ───────────────────────────────────── */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.chevron {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  animation: bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+  50%       { transform: rotate(45deg) translateY(6px); opacity: 0.5; }
+}
+
+/* ── Locations ──────────────────────────────────────────── */
+.locations {
+  padding: 5rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.locations h2 {
+  font-family: 'Lighthaus', serif;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--accent);
+}
+
+.locations-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.location-card {
+  background-color: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 260px;
+  max-width: 32%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.location-card h3 {
+  font-size: 1.15rem;
+  margin: 0.5rem 0;
+  font-family: 'Lighthaus', serif;
+  letter-spacing: 0.03em;
+}
+
+.location-card p {
+  margin: 0.3rem 0;
+  font-size: 0.93rem;
+  color: var(--text-muted);
+}
+
+.contact-link {
+  display: inline-block;
+  margin-top: 0.9rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.contact-link:hover {
+  opacity: 0.85;
+}
+
+/* ── Gallery ────────────────────────────────────────────── */
+.gallery {
+  padding: 1rem 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.2s;
+  display: block;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* ── Lightbox ───────────────────────────────────────────── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 9, 8, 0.94);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 88vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+  animation: lb-fade 0.25s ease;
+}
+
+@keyframes lb-fade {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 2.4rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover { opacity: 1; }
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 3.5rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  padding: 0 1rem;
+  user-select: none;
+}
+
+.lightbox-nav:hover { opacity: 1; }
+.lightbox-prev { left: 0.5rem; }
+.lightbox-next { right: 0.5rem; }
+
+/* ── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .slogan {
+    font-size: 1.05rem;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .locations-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
