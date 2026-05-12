@@ -109,6 +109,12 @@
   opacity: 0.85;
 }
 
+.contact-success {
+  color: var(--accent);
+  font-size: 1rem;
+  padding: 1rem 0;
+}
+
 /* ── Mobile ─────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .contact-page {

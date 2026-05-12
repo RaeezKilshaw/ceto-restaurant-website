@@ -144,9 +144,9 @@
   form.addEventListener('submit', e => {
     let valid = true;
 
-    const nameInput = form.querySelector('input[placeholder="Your Name"]');
-    const emailInput = form.querySelector('input[type="email"]');
-    const guestsInput = form.querySelector('input[type="number"]');
+    const nameInput = form.querySelector('input[name="name"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    const guestsInput = form.querySelector('input[name="guests"]');
 
     if (nameInput) {
       clearError(nameInput);
@@ -184,5 +184,16 @@
     }
 
     if (!valid) e.preventDefault();
+  });
+})();
+
+/* ── Contact form: inline success message ─────────────────── */
+(function () {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    form.innerHTML = '<p class="contact-success">Thanks for your message — we\'ll be in touch soon.</p>';
   });
 })();
