@@ -1,3 +1,44 @@
+/* ── Shared header + footer injection ────────────────────── */
+(function () {
+  const NAVBAR = `
+    <div class="navbar">
+      <div class="logo"><a href="home.html">Céto</a></div>
+      <nav class="nav-menu">
+        <ul class="nav-center">
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <a href="bookings.html" class="book-btn">Book a Table</a>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="bookings.html">Book a Table</a>
+    </nav>`;
+
+  const FOOTER = `
+    <p>&copy; 2025 Céto. All rights reserved.</p>
+    <div class="footer-icons">
+      <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+      <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+      <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+      <a href="#" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+    </div>
+    <a href="#top-anchor" class="back-to-top" aria-label="Back to top">
+      <ion-icon name="arrow-up-circle-outline"></ion-icon>
+    </a>`;
+
+  const header = document.querySelector('header');
+  if (header) header.innerHTML = NAVBAR;
+
+  const footer = document.querySelector('footer');
+  if (footer) footer.innerHTML = FOOTER;
+})();
+
 /* ── Active nav link ──────────────────────────────────────── */
 (function () {
   const page = location.pathname.split('/').pop() || 'home.html';
